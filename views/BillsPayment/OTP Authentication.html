@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <title>Moov Money</title>
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header">
+        <img class="moov-logo" src="../../assets/images/headermoov.svg">
+    </div>
+    <div class="title-div">
+        <center><p class="title">AUTHENTICATION</p></center>
+    </div>
+
+    <!--MAIN CONTENT START-->
+    <p class="container" style="text-align: center; color: #474747; font-size:14px; margin-top: 2rem;">We've sent you an SMS code.</p>
+    <p class="container" style="text-align: center; color: #474747; font-size:14px;">To complete the verification process please enter the 6 digit code below.</p>
+
+    <!--OTP CODE-->
+    <div class="otp-column">
+        <input type="text" class="otp-input" id="input1" oninput="handleInput(this, 2)" maxlength="1">
+        <input type="text" class="otp-input" id="input2" oninput="handleInput(this, 3)" maxlength="1">
+        <input type="text" class="otp-input" id="input3" oninput="handleInput(this, 4)" maxlength="1">
+        <input type="text" class="otp-input" id="input4" oninput="handleInput(this, 5)" maxlength="1">
+        <input type="text" class="otp-input" id="input5" oninput="handleInput(this, 6)" maxlength="1">
+        <input type="text" class="otp-input" id="input6" oninput="handleInput(this, 7)" maxlength="1">
+    </div>
+    
+    <script>
+        // KEYPAD FUNCTION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                nav(-1);
+                break;
+                case 'ArrowDown':
+                nav(1);
+                break;
+                case 'ArrowRight':
+                nav(1);
+                break;
+                case 'ArrowLeft':
+                nav(-1);
+                break;
+            }
+        }
+
+        document.activeElement.addEventListener('keydown', handleKeydown);
+
+
+        // FOR OTP
+        function handleInput(input, nextIndex) {
+            // Check if the input is not null
+            if (input.value !== null) {
+                // Remove non-numeric characters
+                input.value = input.value.replace(/\D/g, '');
+    
+                // Check if the value is a single digit number
+                if (!isNaN(input.value) && input.value.length === 1) {
+                    if (nextIndex <= 6) {
+                        document.getElementById(`input${nextIndex}`).focus();
+                    }
+                } else {
+                    // If not a valid input, clear the input
+                    input.value = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
