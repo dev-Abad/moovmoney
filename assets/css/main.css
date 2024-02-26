@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0;
+}
+
+/* GENERAL CONTENT STYLE */
+.header{
+    background-color: #EA6608;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-div{
+    background-color: #0055BB;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.header-div{
+    margin: 0;
+    padding: 0;
+    background-color: #0055BB;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.black-title{
+    padding: 0;
+    font-size: 16px;
+    text-align: center;
+    color: #252525;
+    font-weight: bold;
+}
+
+.dashboard-div {
+    background-color: #0055BB;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.dashboard-title {
+    padding: 0.5rem;
+    padding-left: 0.8rem;
+    padding-top: 0.8rem;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+}
+
+.moov-logo{
+    width: 80px;
+    height: 40px;
+}
+
+.full-logo{
+    width: 100px;
+    height: 100px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.inputs {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    width: calc(100% - 1rem); 
+    height: 30px;
+    max-width: 100%;
+    border-radius: 7px;
+    padding-left: 5px;
+    border-color: #cccccc;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.inputs:hover,
+.inputs:active,
+.inputs:focus{
+    border-color: #EC6608;
+}
+
+
+.buttons{
+    margin-top: 2rem;
+    padding: 5px;
+    width: 50%;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #EC6707;
+    color: white;
+    border-color: #F5A76F;
+}
+
+
+.inputs2{
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+    width: calc(100% - 1rem); 
+    height: 30px;
+    max-width: 100%;
+    border-radius: 7px;
+    padding-left: 5px;
+    border-color: #cccccc;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.inputs2:hover,
+.inputs2:active,
+.inputs2:focus{
+    border-color: #EC6608;
+}
+
+.input-label{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #252525;
+}
+
+
+/* ----------------------------------------------- */
+
+/* FOR DASHBOARD */
+.btn-balance {
+    padding-left: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+}
+
+.dashboard-title,
+.btn-balance {
+    margin: 0;
+}
+
+
+.col-menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.menu-item {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item svg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px; 
+}
+
+/* ---------------------- */
+
+/* FOR EXPRESS SEND PAGE */
+#fullname{
+    margin: 1rem 0 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #252525;
+}
+
+#contact {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    border: transparent;
+}
+
+.receipt-content{
+    margin-left: 2rem;
+    font-size: 14px;
+    text-align: left;
+    color: #252525;
+}
+
+/* FOR DOWNLOAD RECEIPT FUNCTION */
+#toast {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* ---------------------------------- */
+
+/* OTP AUTHENTICATION SCREEN */
+.otp-column {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Responsive adjustments for keypad screen size */
+@media (max-width: 240px) {
+    .otp-column {
+        flex-direction: row; /* Change to column layout on smaller screens */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* Adjust top margin for better spacing on smaller screens */
+    }
+}
+
+.otp-input {
+    text-align: center;
+    border-radius: 10px;
+    background-color: #EAEAEA;
+    border-color: #D4CCC6;
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.otp-input:focus{
+    border-color: #EA6608;
+}
+
+
+/* ----------------------------------- */
+
+
+/* COUNTRY SELECTION */
+
+.btn-country {
+    width: 100%;
+    height: 4rem;  /* Adjusted height for smaller screens */
+    font-weight: normal;
+    font-size: 16px;  /* Adjusted font size for smaller screens */
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 1rem;  /* Adjusted padding for smaller screens */
+    text-align: left;
+    background-color: transparent;
+    color: #252525;
+    border-color: transparent;
+}
+
+.btn-country:hover:active {
+    background-color: #0055BB;
+    color: white;
+}
+
+.btn-country-selection {
+    margin-top: 1rem;  /* Adjusted margin for smaller screens */
+    padding-left: 1rem;  /* Adjusted padding for smaller screens */
+    width: 100%;
+    height: 2rem;  /* Adjusted height for smaller screens */
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;  /* Adjusted font size for smaller screens */
+    background-color: white;
+    color: #252525;
+    border-color: transparent;
+}
+
+.btn-country-selection:hover:active{
+    background-color: #0055BB;
+    color: white;
+}
+
+
+/* INTERNATIONAL FILL UP SPECIFY */
+
+#specify{
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    width: calc(100% - 1rem); 
+    height: 30px;
+    max-width: 100%;
+    padding-left: 5px;
+    border-radius: 8px;;
+    background-color: white;
+    font-size: 12px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+#specify:hover:active{
+    background-color: #EC6608;
+    color: white;
+}
+
+
+/* FOR TRANSFER MONEY */
+
+.display-title{
+    font-size: 16px;
+    color: #252525;
+    font-weight: bold; 
+}
+
+.display-label{
+    font-size: 16px;
+    color: #252525;
+    text-align: right;
+}
+
+.details{
+    margin-left: 1rem;
+    line-height: 0;
+    font-size: 12px;
+    color: #252525;
+}
+
+.transaction-fee{
+    line-height: 0;
+    font-size: 12px;
+    color: #252525;
+}
