@@ -62,6 +62,8 @@ body{
     text-align: center;
     color: #252525;
     font-weight: bold;
+    line-height: 0;
+    margin-bottom: 2rem;
 }
 
 .dashboard-div {
