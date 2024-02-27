@@ -7,6 +7,12 @@
     <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
     <title>Moov Money</title>
 </head>
+    <style>
+        .btn-country-selection:focus {
+            background-color: darkviolet; 
+            color: white; 
+        }
+    </style>
 <body>
     <!--GENERAL CONTENT-->
     <div class="header-div">
@@ -14,9 +20,43 @@
     </div>
 
     <!--MAIN CONTENT START-->
-    <input class="inputs" type="number" id="accountNo" name="account-num" placeholder="(+223)">
-    <input class="inputs" type="number" id="amount" name="amount" placeholder="Amount">
+    <input class="inputs" tabIndex="1" type="number" id="accountNo" name="account-num" placeholder="(+223)">
+    <input class="inputs" tabIndex="2" type="number" id="amount" name="amount" placeholder="Amount">
 
     <button id="specify"> Please Specify</button>
+    <script>
+        // KEYPAD FUNCTION
+        function handleKeydown(e) {
+            // Prevent default behavior of arrow keys
+            e.preventDefault();
+
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                case 'ArrowRight':
+                    nav(1);
+                    break;
+                case 'ArrowLeft':
+                    nav(-1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.inputs');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
 </body>
 </html>

@@ -6,6 +6,12 @@
     <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <title>Moov Money</title>
+    <style>
+        .btn-country-selection:focus {
+            background-color: darkviolet; 
+            color: white; 
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -15,6 +21,40 @@
         <center><p class="title">INTERNATIONAL</p></center>
     </div>
 
-    <button class="btn-country-selection" onclick="document.location='Country Selection.html'"> SELECT COUNTRY</button>
-</body>
+    <button class="btn-country-selection" tabIndex="1" onclick="document.location='Country Selection.html'"> SELECT COUNTRY</button>
+<script>
+        // KEYPAD FUNCTION
+        function handleKeydown(e) {
+            // Prevent default behavior of arrow keys
+            e.preventDefault();
+
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                case 'ArrowRight':
+                    nav(1);
+                    break;
+                case 'ArrowLeft':
+                    nav(-1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.btn-country-selection');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
+    </body>
 </html>

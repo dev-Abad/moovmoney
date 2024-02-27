@@ -6,7 +6,13 @@
     <title>Moov Money</title>
     <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
     <link rel="stylesheet" href="../../assets/css/main.css">
-</head>
+<style>
+        .btn-country:focus {
+            background-color: darkviolet; 
+            color: white; 
+        }
+    </style>
+    </head>
 <body>
     <!--GENERAL CONTENT-->
     <div class="header">
@@ -19,13 +25,47 @@
     <!--MAIN CONTENT START-->
     <div>
         <center>
-                <button class="btn-country" onclick="document.location='International Fillup.html'"> BURKINA</button>
-                <button class="btn-country" onclick="document.location='International Fillup.html'"> MALI</button>
-                <button class="btn-country" onclick="document.location='International Fillup.html'"> IVORY</button>
-                <button class="btn-country" onclick="document.location='International Fillup.html'"> COAST</button>
-                <button class="btn-country" onclick="document.location='International Fillup.html'"> BERNIN</button>
-                <button class="btn-country" onclick="document.location='International Fillup.html'"> TOGO</button>
+                <button class="btn-country" tabIndex"1" onclick="document.location='International Fillup.html'"> BURKINA</button>
+                <button class="btn-country" tabIndex"2" onclick="document.location='International Fillup.html'"> MALI</button>
+                <button class="btn-country" tabIndex"3" onclick="document.location='International Fillup.html'"> IVORY</button>
+                <button class="btn-country" tabIndex"4" onclick="document.location='International Fillup.html'"> COAST</button>
+                <button class="btn-country" tabIndex"5" onclick="document.location='International Fillup.html'"> BERNIN</button>
+                <button class="btn-country" tabIndex"6" onclick="document.location='International Fillup.html'"> TOGO</button>
         </center>
     </div>
+    <script>
+        // KEYPAD FUNCTION
+        function handleKeydown(e) {
+            // Prevent default behavior of arrow keys
+            e.preventDefault();
+
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                case 'ArrowRight':
+                    nav(1);
+                    break;
+                case 'ArrowLeft':
+                    nav(-1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.btn-country');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
 </body>
 </html>
