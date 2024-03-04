@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moov Money</title>
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header-div">
+        <center><p class="header-title">SEND MONEY</p></center>
+    </div>
+
+    <center> <img src="../../../assets/images/moov.svg" class="full-logo"> </center>
+
+    <p class="black-title"> Towards Moov</p>
+
+    <!--MAIN CONTENT START-->
+
+    <!-- USER INPUTS -->
+    <div class="container">
+        <p class="input-label">Mobile Number</p>
+        <input class="inputs2" type="text" id="mobileNo" name="mobile-num" placeholder="Enter mobile no." tabIndex="1">
+    </div>
+
+    <div class="container">
+        <p class="input-label">Amount</p>
+        <input class="inputs2" type="text" id="amount" name="amount" placeholder="Enter Amount" tabIndex="2">
+    </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>CONTINUE</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+
+    <br><br>
+
+    <script>
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.inputs2');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
+</body>
+</html>

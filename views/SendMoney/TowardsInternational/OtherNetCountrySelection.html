@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
     <title>Moov Money</title>
-</head>
-    <style>
-        .btn-country-selection:focus {
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/moov.ico">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+<style>
+        .btn-country:focus {
             background-color: darkviolet; 
             color: white; 
         }
     </style>
+    </head>
 <body>
     <!--GENERAL CONTENT-->
-    <div class="header-div">
-        <center><p class="title">INTERNATIONAL</p></center>
+    <div class="header">
+        <center><p class="title">COUNTRY</p></center>
     </div>
 
     <!--MAIN CONTENT START-->
-    <input class="inputs" tabIndex="1" type="number" id="accountNo" name="account-num" placeholder="(+223)">
-    <input class="inputs" tabIndex="2" type="number" id="amount" name="amount" placeholder="Amount">
-
-    <button id="specify"> Please Specify</button>
+    <div>
+        <center>
+                <button class="button" tabIndex"1" onclick="document.location='International Fillup.html'"> BURKINA</button>
+                <button class="button" tabIndex"2" onclick="document.location='International Fillup.html'"> MALI</button>
+                <button class="button" tabIndex"3" onclick="document.location='International Fillup.html'"> IVORY</button>
+                <button class="button" tabIndex"4" onclick="document.location='International Fillup.html'"> COAST</button>
+                <button class="button" tabIndex"5" onclick="document.location='International Fillup.html'"> BERNIN</button>
+                <button class="button" tabIndex"6" onclick="document.location='International Fillup.html'"> TOGO</button>
+        </center>
+    </div>
     <script>
         // KEYPAD FUNCTION
         function handleKeydown(e) {
@@ -49,7 +55,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.inputs');
+            const items = document.querySelectorAll('.button');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];
