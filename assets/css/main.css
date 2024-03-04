@@ -528,19 +528,6 @@ body{
     border-color: #EC6608;
 }
 
-
-.buttons{
-    margin-top: 2rem;
-    padding: 5px;
-    width: 50%;
-    font-weight: bold;
-    border-radius: 20px;
-    background-color: #EC6707;
-    color: white;
-    border-color: #F5A76F;
-}
-
-
 .inputs2{
     margin-left: 0.5rem;
     margin-bottom: 1rem;
@@ -720,7 +707,7 @@ body{
     border-color: transparent;
 }
 
-.button:hover:active {
+.button:hover.button:focus{
     background-color: #0055BB;
     color: white;
 }
