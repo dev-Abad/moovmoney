@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
-    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
     <title>Moov Money</title>
     <style>
         .btn-country-selection:focus {
@@ -14,15 +13,29 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <img class="moov-logo" src="../../assets/images/moov.png">
-    </div>
-    <div class="title-div">
-        <center><p class="title">INTERNATIONAL</p></center>
+    <div class="header-div">
+        <center><p class="title">SEND MONEY</p></center>
     </div>
 
-    <button class="btn-country-selection" tabIndex="1" onclick="document.location='Country Selection.html'"> SELECT COUNTRY</button>
-<script>
+    <center> <img src="../../../assets/images/moov.svg" class="full-logo"> </center>
+
+    <p class="black-title"> To Other Networks</p>
+
+    <button class="button-selection" tabIndex="1" onclick="redirectTo('/views/TowardsInternational/OtherNetCountrySelection.html')"> SELECT COUNTRY</button>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>DOWNLOAD</p></div>
+        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+    </div>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
         // KEYPAD FUNCTION
         function handleKeydown(e) {
             // Prevent default behavior of arrow keys
@@ -56,5 +69,5 @@
             }
         }
     </script>
-    </body>
+</body>
 </html>

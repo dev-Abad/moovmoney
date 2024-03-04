@@ -4,34 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moov Money</title>
-    <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <style>
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/moov.ico">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+<style>
         .btn-country:focus {
             background-color: darkviolet; 
-            color: black; 
+            color: white; 
         }
     </style>
-</head>
+    </head>
 <body>
     <!--GENERAL CONTENT-->
     <div class="header">
-        <img class="moov-logo" src="../../assets/images/moov.png">
-    </div>
-    <div class="title-div">
-        <center><p class="title">PLEASE SPECIFY</p></center>
+        <center><p class="title">COUNTRY</p></center>
     </div>
 
     <!--MAIN CONTENT START-->
     <div>
         <center>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Family Support</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Education</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Travel</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Gift</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Investment</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Real Estate</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Business Transactions</button>
+                <button class="button" tabIndex"1" onclick="document.location='International Fillup.html'"> BURKINA</button>
+                <button class="button" tabIndex"2" onclick="document.location='International Fillup.html'"> MALI</button>
+                <button class="button" tabIndex"3" onclick="document.location='International Fillup.html'"> IVORY</button>
+                <button class="button" tabIndex"4" onclick="document.location='International Fillup.html'"> COAST</button>
+                <button class="button" tabIndex"5" onclick="document.location='International Fillup.html'"> BERNIN</button>
+                <button class="button" tabIndex"6" onclick="document.location='International Fillup.html'"> TOGO</button>
         </center>
     </div>
     <script>
@@ -59,7 +55,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.btn-country');
+            const items = document.querySelectorAll('.button');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];
