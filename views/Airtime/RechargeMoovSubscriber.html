@@ -19,12 +19,26 @@
     <!--MAIN CONTENT START-->
     <!-- USER INPUTS -->
     <div class="container">
-        <p class="input-label">Recipient's Number</p>
-        <input class="inputs2" type="number" id="accountNum" name="account-num" placeholder="Enter recipient's number">
+        <p class="input-label">Mobile Number</p>
+        <input class="inputs2" type="number" id="mobileNum" name="mobile-num" placeholder="Enter mobile no.">
     </div>
     <div class="container">
         <p class="input-label">Amount</p>
-        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter Amount">
+        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter Amount" onclick="redirectTo('/views/Airtime/Confirmation.html')"> 
     </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>

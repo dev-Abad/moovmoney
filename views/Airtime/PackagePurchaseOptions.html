@@ -18,10 +18,24 @@
 
     <!--MAIN CONTENT START-->
     <center>
-        <button class="btn-country">Moov Pass Bonus</button>
-        <button class="btn-country">Voice Plan</button>
-        <button class="btn-country">Data Plan</button>
-        <button class="btn-country">Offer</button>
+        <button class="button" onclick="redirectTo('/views/Airtime/Notice.html')">Moov Pass Bonus</button>
+        <button class="button" onclick="redirectTo('/views/Airtime/Notice.html')">Voice Plan</button>
+        <button class="button" onclick="redirectTo('/views/Airtime/Notice.html')">Data Plan</button>
+        <button class="button" onclick="redirectTo('/views/Airtime/Notice.html')">Offer</button>
     </center>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>

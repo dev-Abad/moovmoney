@@ -4,23 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moov Money</title>
-<<<<<<< HEAD:views/TowardsInternational/Specification.html
-    <link rel="icon" type="image/x-icon" href="../../assets/images/moov.ico">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <style>
-        .btn-country:focus {
-            background-color: darkviolet; 
-            color: black; 
-        }
-    </style>
-=======
     <link rel="stylesheet" href="../../../assets/css/main.css">
->>>>>>> 5641630950eed7a1ec3b430a9aa2221697fdf3fe:views/SendMoney/TowardsInternational/Specification.html
 </head>
 <body>
     <!--GENERAL CONTENT-->
     <div class="header">
-        <img class="moov-logo" src="../../../assets/images/moov.png">
+        <img class="moov-logo" src="../../../assets/images/headermoov.svg">
     </div>
     <div class="title-div">
         <center><p class="title">PLEASE SPECIFY</p></center>
@@ -29,16 +18,29 @@
     <!--MAIN CONTENT START-->
     <div>
         <center>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Family Support</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Education</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Travel</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Gift</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Investment</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Real Estate</button>
-                <button class="btn-country" onclick="document.location='Confirmation.html'"> Business Transactions</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Family Support</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Education</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Travel</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Gift</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Investment</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Real Estate</button>
+                <button class="button" onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"> Business Transactions</button>
         </center>
     </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+
     <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
         // KEYPAD FUNCTION
         function handleKeydown(e) {
             // Prevent default behavior of arrow keys
@@ -63,7 +65,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.btn-country');
+            const items = document.querySelectorAll('.button');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];

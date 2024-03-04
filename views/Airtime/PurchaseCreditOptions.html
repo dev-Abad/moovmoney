@@ -14,8 +14,22 @@
 
     <!--MAIN CONTENT START-->
     <center>
-        <button class="btn-country">To My Number</button>
-        <button class="btn-country">Recharge a moov subscriber</button>
+        <button class="button" onclick="redirectTo('/views/Airtime/ToMyNumberSend.html')">To My Number</button>
+        <button class="button" onclick="redirectTo('/views/Airtime/RechargeMoovSubscriber.html')">Recharge a moov subscriber</button>
     </center>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
