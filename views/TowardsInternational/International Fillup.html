@@ -8,9 +8,9 @@
     <title>Moov Money</title>
 </head>
     <style>
-        .btn-country-selection:focus {
-            background-color: darkviolet; 
-            color: white; 
+        .inputs:focus {
+            background-color: orange; 
+            color: black; 
         }
     </style>
 <body>
@@ -23,7 +23,7 @@
     <input class="inputs" tabIndex="1" type="number" id="accountNo" name="account-num" placeholder="(+223)">
     <input class="inputs" tabIndex="2" type="number" id="amount" name="amount" placeholder="Amount">
 
-    <button id="specify"> Please Specify</button>
+    <button id="specify" class="inputs" tabIndex = "3" onclick="document.location='Specification.html'"> Please Specify</button>
     <script>
         // KEYPAD FUNCTION
         function handleKeydown(e) {
