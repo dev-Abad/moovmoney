@@ -56,10 +56,41 @@
         <div class="footer-col"><p>BACK</p></div>
     </div>
 
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SEND</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+    
     <script>
         // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
             window.location.href = url;
+        }
+
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.button');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
         }
     </script>
 </body>
