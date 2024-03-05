@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../assets/css/main.css">
+   
     <title>Moov Money</title>
 </head>
 <body>
@@ -41,19 +42,58 @@
 
     <div class="row" style="margin-bottom: 2rem;">
         <div class="column">
-            <p class="transaction-fee">Transaction_Fee</p>
+            <p class="transaction-fee">Transaction Fee</p>
         </div>
         <div class="column">
             <p class="transaction-fee" style="text-align: right;">30.00</p>
         </div>
     </div>
     
-
-    <!-- Fixed footer -->
+<!--
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+<<<<<<< HEAD
+        <div class="footer-col" id="softkey-center" onclick="document.location='confirmTransaction.html'">SEND</div>
+        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+=======
         <div class="footer-col"><p>SEND</p></div>
         <div class="footer-col"><p>BACK</p></div>
+>>>>>>> a09f3ad7bb9f95603945d65e7f975711c78489a0
     </div>
+    -->
+    
+    <footer class="softkey">
+        <div class="footer-col" id="softkey-left">Back</div>
+        <div class="footer-col" id="softkey-center" onclick="document.location='confirmTransaction.html'">SEND</div>
+        <div class="footer-col" id="softkey-right">Options</div>
+    </footer>
+    
+    <script>
+        const softkeyCallback = {
+            left: function() { console.log('You click on SoftLeft') },
+            center: function() { console.log('You click on Enter') },
+            right: function() { console.log('You click on SoftRight') }
+        };
+        function handleKeyDown(evt) {
+            switch (evt.key) {
+                case 'SoftLeft':
+                    // Action case press left key
+                    softkeyCallback.left();
+                break;
+
+                case 'SoftRight':
+                    // Action case press right key
+                    softkeyCallback.right();
+                break;
+
+                case 'Enter':
+                    // Action case press center key
+                    softkeyCallback.center();
+                break;
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+    </script>
 </body>
 </html>

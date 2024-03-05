@@ -1,7 +1,7 @@
 {
   "name": "MoovMoney",
   "description": "A moov money app",
-  "launch_path": "/views/TowardsInternational/International Fillup.html",
+  "launch_path": "/views/SendMoney/TowardsInternational/Confirmation.html",
   "icons": {
     "16": "/icons/icon16x16.png",
     "48": "/icons/icon48x48.png",
