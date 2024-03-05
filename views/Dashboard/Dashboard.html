@@ -18,7 +18,7 @@
 <body>
     <!--GENERAL CONTENT-->
     <div class="header">
-        <img class="moov-logo" src="../../assets/images/moov.png">
+        <img class="moov-logo" src="../../assets/images/headermoov.svg">
     </div>
     <div class="dashboard-div">
         <p class="dashboard-title">Good Day, Abdul</p>
@@ -60,7 +60,7 @@
         </div>
 
         <!-- SEND MONEY -->
-        <div class="menu-item" tabIndex="3">
+        <div class="menu-item" tabIndex="3" onclick="redirectTo('/views/Dashboard/SendMoney.html')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="fill: lightgreen;" >
                 <!-- Left arrow -->
                 <path d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41z" style="fill: #2583EF;"/>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- AIRTIME -->
-        <div class="menu-item" tabIndex="4">
+        <div class="menu-item" tabIndex="4" onclick="redirectTo('/views/Airtime/AirtimeOptions.html')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" >
                 <!-- Wallet part -->
                 <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H80c-8.8 0-16-7.2-16-16s7.2-16 16-16H448c17.7 0 32-14.3 32-32s-14.3-32-32-32H64z"  style="fill:#6A2EFF;"/>
@@ -89,7 +89,19 @@
         </div>
     </div>
 
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+    </div>
+
     <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
         // KEYPAD FUNCTION
         function handleKeydown(e) {
             switch(e.key) {
