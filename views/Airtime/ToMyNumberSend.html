@@ -26,7 +26,21 @@
     <!-- USER INPUTS -->
     <div class="container">
         <p class="input-label">Amount</p>
-        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter Amount">
+        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter Amount" onclick="redirectTo('/views/Airtime/Confirmation.html')">
     </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>CONTINUE</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
