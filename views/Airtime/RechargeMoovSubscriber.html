@@ -20,12 +20,14 @@
     <!-- USER INPUTS -->
     <div class="container">
         <p class="input-label">Mobile Number</p>
-        <input class="inputs2" type="number" id="mobileNum" name="mobile-num" placeholder="Enter mobile no.">
+        <input class="inputs2" type="number" id="mobileNum" name="mobile-num" placeholder="Enter mobile number" tabindex="1">
     </div>
     <div class="container">
         <p class="input-label">Amount</p>
-        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter Amount" onclick="redirectTo('/views/Airtime/Confirmation.html')"> 
+        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter amount" tabindex="2" onclick="redirectTo('/views/Airtime/Confirmation.html')"> 
     </div>
+
+    <br><br>
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
@@ -38,6 +40,30 @@
         // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
             window.location.href = url;
+        }
+
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.inputs2');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
         }
     </script>
 </body>
