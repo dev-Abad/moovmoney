@@ -14,9 +14,50 @@
 
     <!--MAIN CONTENT START-->
     <center>
-        <button class="btn-country">Recharge Meter</button>
-        <button class="btn-country">Save N Counter</button>
-        <button class="btn-country">Delete N Counter</button>
+        <button class="button" tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/PrepayRechargeMeter.html')">Recharge Meter</button>
+        <button class="button" tabindex="2" onclick="redirectTo('/views/Invoices/SBEE/PrepaySaveNCounterFillup.html')">Save N Counter</button>
+        <button class="button" tabindex="3" onclick="redirectTo('/views/Invoices/SBEE/PrepayDeleteNCounterFillup.html')">Delete N Counter</button>
     </center>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+    
+    <br><br>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.button');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
 </body>
 </html>
