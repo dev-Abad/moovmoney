@@ -14,11 +14,9 @@
 <body>
     <!--GENERAL CONTENT-->
     <div class="header">
-<<<<<<< HEAD:views/TowardsInternational/OTP Authentication.html
+
         <img class="moov-logo" src="../../assets/images/headermoov.svg">
-=======
         <img class="moov-logo" src="../../../assets/images/headermoov.svg">
->>>>>>> 5641630950eed7a1ec3b430a9aa2221697fdf3fe:views/SendMoney/ToOtherNetworks/OTP_Authentication.html
     </div>
     <div class="title-div">
         <center><p class="title">AUTHENTICATION</p></center>
@@ -30,7 +28,7 @@
 
     <!--OTP CODE-->
     <div class="otp-column">
-<<<<<<< HEAD:views/TowardsInternational/OTP Authentication.html
+
         <input type="text" class="otp-input" id="input1" oninput="handleInput(this, 2)" maxlength="1">
         <input type="text" class="otp-input" id="input2" oninput="handleInput(this, 3)" maxlength="1">
         <input type="text" class="otp-input" id="input3" oninput="handleInput(this, 4)" maxlength="1">
@@ -40,7 +38,7 @@
     </div>
     
     <script>
-=======
+
         <input type="text" class="otp-input" id="input1" oninput="handleInput(this, 2)" maxlength="1" tabindex="1">
         <input type="text" class="otp-input" id="input2" oninput="handleInput(this, 3)" maxlength="1" tabindex="2">
         <input type="text" class="otp-input" id="input3" oninput="handleInput(this, 4)" maxlength="1" tabindex="3">
@@ -54,11 +52,24 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>PROCEED</p></div>
+        <div class="footer-col" id="softkey-center"><p>PROCEED</p></div>
         <div class="footer-col"><p>BACK</p></div>
     </div>
     
     <script>
+            
+            
+            function redirectTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+
+        // Add event listener to the "PROCEED" button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to the next page
+            redirectTo('/views/SendMoney/TowardsMoov/DigitalReceipt.html');
+        });
+        
         // FOR KEYPAD NAVIGATION
         function handleKeydown(e) {
             switch(e.key) {
