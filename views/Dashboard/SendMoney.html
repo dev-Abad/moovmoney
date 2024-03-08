@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moov Money</title>
     <link rel="stylesheet" href="../../assets/css/main.css">
+    <style>
+        .button:focus {
+            background-color: #0055BB; 
+            color: white; 
+        }
+    </style>
 </head>
 <body>
     <!--GENERAL CONTENT-->
@@ -22,7 +28,7 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col" tabIndex="4" id="softkey-center"><p>SELECT</p></div>
         <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
     </div>
 
@@ -42,6 +48,7 @@
                 case 'ArrowDown':
                     nav(1);
                     break;
+                
             }
         }
 

@@ -52,8 +52,56 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>SEND</p></div>
+        <div class="footer-col" id="softkey-center"><p>SEND</p></div>
         <div class="footer-col"><p>BACK</p></div>
     </div>
+    <script>
+        function redirectTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+
+        function handleKeydown(e) {
+            // Prevent default behavior of arrow keys
+            e.preventDefault();
+
+            switch(e.keyCode) {
+                case 38: // ArrowUp
+                    nav(-1);
+                    break;
+                case 40: // ArrowDown
+                    nav(1);
+                    break;
+                case 39: // ArrowRight
+                    nav(1);
+                    break;
+                case 37: // ArrowLeft
+                    nav(-1);
+                    break;
+                case 13: // Enter key
+                    // Trigger click event for center button
+                    document.getElementById('softkey-center').click();
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.footer-col');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+
+        // Add event listener for the center button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to Digital Receipt page
+            redirectTo('/views/SendMoney/TowardsMoov/OTP_Authentication.html');
+        });
+    </script>
 </body>
 </html>

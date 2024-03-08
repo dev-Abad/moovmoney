@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moov Money</title>
     <link rel="stylesheet" href="../../../assets/css/main.css">
+    <style>
+        .button:focus {
+            background-color: blue; 
+            color: white; 
+        }
+    </style>
 </head>
 <body>
     <!--GENERAL CONTENT-->
@@ -14,7 +20,7 @@
 
     <!--MAIN CONTENT START-->
     <center>
-        <button class="button" tabindex="1">Intra Moov</button>
+        <button class="button" tabindex="1" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')">Intra Moov</button>
         <button class="button" tabindex="2"> To Other Networks</button>
         <button class="button" tabindex="3"> Other Partners</button>
     </center>
@@ -27,6 +33,11 @@
     </div>
 
     <script>
+        
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+        
         // KEYPAD FUNCTION
         function handleKeydown(e) {
             // Prevent default behavior of arrow keys
@@ -51,7 +62,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.btn-country');
+            const items = document.querySelectorAll('.button');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];
