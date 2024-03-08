@@ -51,8 +51,9 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col" id="softkey-center" onclick="redirectTo('/views/Dashboard/Dashboard.html')"><p>DOWNLOAD</p></div>
-        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+        <div class="footer-col" id="softkey-center"><p>DOWNLOAD</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/Dashboard.html')"><p>EXIT</p></div>
+
         </div>
     </div>
     
@@ -62,28 +63,27 @@
             window.location.href = url;
         }
         
+        // KEYPAD NAVIGATION
         function handleKeydown(e) {
-            // Prevent default behavior of arrow keys
-            e.preventDefault();
-
-            switch(e.keyCode) {
-                case 38: // ArrowUp
+            switch(e.key) {
+                case 'ArrowUp':
                     nav(-1);
                     break;
-                case 40: // ArrowDown
+                case 'ArrowDown':
                     nav(1);
                     break;
-                case 39: // ArrowRight
-                    nav(1);
-                    break;
-                case 37: // ArrowLeft
-                    nav(-1);
-                    break;
-                case 13: // Enter key
-                    // Trigger click event for center button
-                    document.getElementById('softkey-center').click();
+                    
+                case 'Enter': // Enter key
+                   // Trigger click event for center button
+                   document.getElementById('softkey-center').click();
+                   break;
+                    
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
+            
         }
 
         document.addEventListener('keydown', handleKeydown); 

@@ -29,7 +29,8 @@
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col" tabIndex="4" id="softkey-center"><p>SELECT</p></div>
-        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/Dashboard.html')"><p>BACK</p></div>
+
     </div>
 
 
@@ -47,6 +48,10 @@
                     break;
                 case 'ArrowDown':
                     nav(1);
+                    break;
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
                 
             }

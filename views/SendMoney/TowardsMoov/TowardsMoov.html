@@ -33,7 +33,7 @@
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col" id="softkey-center"><p>CONTINUE</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/SendMoney.html')"><p>BACK</p></div>
     </div>
 
     <br><br>
@@ -65,7 +65,13 @@
                    // Trigger click event for center button
                    document.getElementById('softkey-center').click();
                    break;
+                    
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
             }
+            
         }
 
         document.addEventListener('keydown', handleKeydown); 

@@ -40,7 +40,7 @@
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col"><p>SELECT</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"><p>BACK</p></div>
     </div>
 
     <script>
@@ -66,6 +66,10 @@
                     break;
                 case 'ArrowLeft':
                     nav(-1);
+                    break;
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
         }
