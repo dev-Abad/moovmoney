@@ -9,31 +9,39 @@
 <body>
     <!--GENERAL CONTENT-->
     <div class="header-div">
-        <center><p class="header-title">EXPRESS SEND</p></center>
+        <center><p class="header-title">SEND MONEY</p></center>
     </div>
 
-    <center> 
-        <img src="../../../assets/images/moov.svg" class="full-logo"> 
-    </center>
-
-    <p class="black-title"> Save N Counter</p>
-
     <!--MAIN CONTENT START-->
-
     <!-- USER INPUTS -->
     <div class="container">
-        <p class="input-label">No. you want to register</p>
-        <input class="inputs2" type="number" id="counterNo" name="counter-num" placeholder="Enter counter no." tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/PrepaySaveNCounterConfirm.html')">
+        <p class="input-label">Counter Number</p>
+        <input class="inputs2" type="number" id="counterNo" name="counter-number" placeholder="Enter counter number" tabindex="1">
+    </div>
+
+    <div class="container">
+        <p class="input-label">Customer Name</p>
+        <input class="inputs2" type="text" id="userName" name="customer-name" placeholder="Enter Customer Name" tabindex="2">
+    </div>
+
+    <div class="container">
+        <p class="input-label">Meter Number</p>
+        <input class="inputs2" type="number" id="meterNumber" name="meter-number" placeholder="Enter Meter No." tabindex="3">
+    </div>
+
+    <div class="container">
+        <p class="input-label">Amount</p>
+        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter Amount" tabindex="4" onclick="redirectTo('/views/Invoices/SBEE/PrepayRechargeConfirmation.html')">
     </div>
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
-        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp;</p></div>
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col"><p>CONTINUE</p></div>
         <div class="footer-col"><p>BACK</p></div>
     </div>
     
-    <br>
+    <br><br>
 
     <script>
         // FOR URL LINKING TO OTHER PAGE

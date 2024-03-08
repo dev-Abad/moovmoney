@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moov Money</title>
-    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
     <!--GENERAL CONTENT-->
@@ -14,9 +14,14 @@
 
     <!--MAIN CONTENT START-->
     <center>
-        <button class="button" tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/PrepaySelection.html')">SBEE Prepay</button>
-        <button class="button" tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/PostpayNotice.html')">SBEE Postpay</button>
-        <button class="button" tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/ConnectionNotice.html')">SBEE Connection</button>
+        <button class="button" tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/SBEE_Selection.html')">SBEE</button>
+        <button class="button" tabindex="2" onclick="redirectTo('/views/Invoices/SONEB/SONEB_Notice.html')">SONEB</button>
+        <button class="button" tabindex="3" onclick="redirectTo('/views/Invoices/Canal_Iroko/Canal_Iroko_Selection.html')">CANAL+/IROKO+</button>
+        <button class="button" tabindex="4" onclick="redirectTo('/views/Invoices/Confirmation.html')">INSURANCE</button>
+        <button class="button" tabindex="5" onclick="redirectTo('/views/Invoices/Confirmation.html')">TRANSPORT</button>
+        <button class="button" tabindex="6" onclick="redirectTo('/views/Invoices/Confirmation.html')">ETISALAT POSTPAID</button>
+        <button class="button" tabindex="7" onclick="redirectTo('/views/Invoices/Confirmation.html')">OTHERS</button>
+        <button class="button" tabindex="8" onclick="redirectTo('/views/Invoices/Confirmation.html')">TAX ON MOTOR VEHICLE</button>
     </center>
 
     <!-- Fixed footer -->
@@ -26,7 +31,7 @@
         <div class="footer-col"><p>BACK</p></div>
     </div>
     
-    <br><br>
+    <br>
 
     <script>
         // FOR URL LINKING TO OTHER PAGE
