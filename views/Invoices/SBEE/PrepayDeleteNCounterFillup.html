@@ -23,7 +23,48 @@
     <!-- USER INPUTS -->
     <div class="container">
         <p class="input-label">No. you want to delete</p>
-        <input class="inputs2" type="number" id="accountNo" name="account-num" placeholder="123456789">
+        <input class="inputs2" type="number" id="accountNo" name="account-num" placeholder="123456789" tabindex="1" onclick="redirectTo('/views/Invoices/SBEE/PrepayDeleteNCounterConfirm.html')">
     </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp;</p></div>
+        <div class="footer-col"><p>CONTINUE</p></div>
+        <div class="footer-col"><p>BACK</p></div>
+    </div>
+    
+    <br>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.inputs2');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
 </body>
 </html>
