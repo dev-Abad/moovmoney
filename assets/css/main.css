@@ -202,12 +202,11 @@ body{
 
 .col-menu {
     display: flex;
-    flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
 .menu-item {
-    width: 50%;
+    flex: 1; /* This will make each item take equal width */
     box-sizing: border-box;
     padding: 10px;
     border: none;
@@ -219,9 +218,9 @@ body{
 }
 
 .menu-item svg {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 3px; 
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
 }
 
 /* ---------------------- */
