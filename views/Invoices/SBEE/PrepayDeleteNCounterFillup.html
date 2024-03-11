@@ -28,20 +28,26 @@
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
-        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp;</p></div>
-        <div class="footer-col"><p>CONTINUE</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col" id="softkey-center"><p>CONTINUE</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Invoices/SBEE/PrepaySelection.html')"><p>BACK</p></div>
     </div>
-    
-    <br>
+
+    <br><br>
 
     <script>
+        
         // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
             window.location.href = url;
         }
-
-
+        
+        // Add event listener to the "PROCEED" button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to the next page
+            redirectTo('/views/Invoices/SBEE/PrepayDeleteNCounterConfirm.html');
+        });
+        
         // KEYPAD NAVIGATION
         function handleKeydown(e) {
             switch(e.key) {
@@ -51,7 +57,18 @@
                 case 'ArrowDown':
                     nav(1);
                     break;
+                    
+                case 'Enter': // Enter key
+                   // Trigger click event for center button
+                   document.getElementById('softkey-center').click();
+                   break;
+                    
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
             }
+            
         }
 
         document.addEventListener('keydown', handleKeydown); 

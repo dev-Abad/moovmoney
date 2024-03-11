@@ -34,31 +34,54 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>PROCEED</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-center"><p>PROCEED</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Invoices/SBEE/PrepayRechargeConfirmation.html')"><p>BACK</p></div>
     </div>
     
     <script>
-        // KEYPAD FUNCTION
+        function redirectTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+
+        // Add event listener to the "PROCEED" button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to the next page
+            redirectTo('/views/Invoices/SBEE/PrepayDigitalReceipt.html');
+        });
+        
+        // FOR KEYPAD NAVIGATION
         function handleKeydown(e) {
             switch(e.key) {
-                case 'ArrowUp':
-                nav(-1);
-                break;
-                case 'ArrowDown':
-                nav(1);
-                break;
-                case 'ArrowRight':
-                nav(1);
-                break;
                 case 'ArrowLeft':
-                nav(-1);
-                break;
+                    nav(-1);
+                    break;
+                case 'ArrowRight':
+                    nav(1);
+                    break;
+                case 'Enter': // Enter key
+                    // Trigger click event for center button
+                    document.getElementById('softkey-center').click();
+                    break; 
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
             }
         }
 
-        document.activeElement.addEventListener('keydown', handleKeydown);
+        document.addEventListener('keydown', handleKeydown); 
 
+        function nav(move) {
+            const items = document.querySelectorAll('.otp-input');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+        
 
         // FOR OTP
         function handleInput(input, nextIndex) {
