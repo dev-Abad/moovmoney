@@ -22,23 +22,29 @@
     <!--MAIN CONTENT START-->
     <div>
         <center>
-                <button class="button" tabIndex="1" onclick="document.location='International Fillup.html'"> BURKINA</button>
-                <button class="button" tabIndex="2" onclick="document.location='International Fillup.html'"> MALI</button>
-                <button class="button" tabIndex="3" onclick="document.location='International Fillup.html'"> IVORY</button>
-                <button class="button" tabIndex="4" onclick="document.location='International Fillup.html'"> COAST</button>
-                <button class="button" tabIndex="5" onclick="document.location='International Fillup.html'"> BERNIN</button>
-                <button class="button" tabIndex="6" onclick="document.location='International Fillup.html'"> TOGO</button>
+                <button class="button" tabIndex="1" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"> BURKINA</button>
+                <button class="button" tabIndex="2" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"> MALI</button>
+                <button class="button" tabIndex="3" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"> IVORY</button>
+                <button class="button" tabIndex="4" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"> COAST</button>
+                <button class="button" tabIndex="5" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"> BERNIN</button>
+                <button class="button" tabIndex="6" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')"> TOGO</button>
         </center>
     </div>
+    <br>
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col"><p>SELECT</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/SendMoney.html')"><p>BACK</p></div>
     </div>
 
     <script>
+        // URL LINKING
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+        
         // KEYPAD FUNCTION
         function handleKeydown(e) {
             // Prevent default behavior of arrow keys
@@ -51,11 +57,10 @@
                 case 'ArrowDown':
                     nav(1);
                     break;
-                case 'ArrowRight':
-                    nav(1);
-                    break;
-                case 'ArrowLeft':
-                    nav(-1);
+                    
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
         }

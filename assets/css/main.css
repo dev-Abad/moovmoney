@@ -137,10 +137,8 @@ body{
     box-sizing: border-box;
 }
 
-.inputs:hover,
-.inputs:active,
 .inputs:focus{
-    border-color: #EC6608;
+    background-color: #fff4ec!important;
 }
 
 
@@ -148,9 +146,15 @@ body{
     margin-top: 2rem;
     padding: 5px;
     width: 50%;
-    font-weight: bold;
+    font-weight: normal;
     border-radius: 20px;
-    background-color: #EC6707;
+    background-color: transparent;
+    color: #252525;
+    border-color: #F5A76F;
+}
+
+.buttons:focus{
+    background-color: #EC6707!important;
     color: white;
     border-color: #F5A76F;
 }
@@ -706,7 +710,7 @@ body{
     border-color: transparent;
 }
 
-.button:hover.button:focus{
+.button:focus{
     background-color: #0055BB;
     color: white;
 }
@@ -724,7 +728,7 @@ body{
     border-color: transparent;
 }
 
-.button-selection:hover:active{
+.button-selection:focus{
     background-color: #0055BB;
     color: white;
 }

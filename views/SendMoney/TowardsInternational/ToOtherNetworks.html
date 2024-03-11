@@ -21,21 +21,21 @@
 
     <p class="black-title"> To Other Networks</p>
 
-    <button class="button-selection" tabIndex="1" onclick="redirectTo('/views/TowardsInternational/OtherNetCountrySelection.html')"> SELECT COUNTRY</button>
+    <button class="button-selection" tabIndex="1" onclick="redirectTo('/views/SendMoney/TowardsInternational/OtherNetCountrySelection.html')"> SELECT COUNTRY</button>
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col"><p>SELECT</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/SendMoney.html')"><p>BACK</p></div>
     </div>
 
     <script>
-        // FOR URL LINKING TO OTHER PAGE
+        // URL LINKING
         function redirectTo(url) {
             window.location.href = url;
         }
-
+        
         // KEYPAD FUNCTION
         function handleKeydown(e) {
             // Prevent default behavior of arrow keys
@@ -48,11 +48,10 @@
                 case 'ArrowDown':
                     nav(1);
                     break;
-                case 'ArrowRight':
-                    nav(1);
-                    break;
-                case 'ArrowLeft':
-                    nav(-1);
+                    
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
         }
@@ -60,7 +59,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.btn-country-selection');
+            const items = document.querySelectorAll('.button-selection');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];
