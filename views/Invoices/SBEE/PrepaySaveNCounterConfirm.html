@@ -27,19 +27,22 @@
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
-        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp;</p></div>
-        <div class="footer-col"><p>SAVE</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col" id="softkey-center" ><p>SAVE</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Invoices/SBEE/PrepayRechargeMeter.html')"><p>BACK</p></div>
     </div>
-    
-    <br>
 
     <script>
-        // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
+            // Redirect to the specified URL
             window.location.href = url;
         }
-
+        
+        // Add event listener for the center button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to Digital Receipt page
+            redirectTo('/views/Invoices/SBEE/PrepayMessage.html');
+        });
 
         // KEYPAD NAVIGATION
         function handleKeydown(e) {
@@ -50,13 +53,24 @@
                 case 'ArrowDown':
                     nav(1);
                     break;
+                    
+                case 'Enter': // Enter key
+                   // Trigger click event for center button
+                   document.getElementById('softkey-center').click();
+                   break;
+                    
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
             }
+            
         }
 
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.inputs2');
+            const items = document.querySelectorAll('.footer-col');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];
