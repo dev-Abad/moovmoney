@@ -35,7 +35,7 @@
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col" id="softkey-center"><p>PROCEED</p></div>
-        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/SendMoney/TowardsInternational/Confirmation.html')"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Airitme/DigitalReceipt.html')"><p>BACK</p></div>
     </div>
     
     <script>
@@ -44,12 +44,6 @@
             // Redirect to the specified URL
             window.location.href = url;
         }
-
-        // Add event listener to the "PROCEED" button
-        document.getElementById('softkey-center').addEventListener('click', function() {
-            // Redirect to the next page
-            redirectTo('/views/SendMoney/TowardsInternational/DigitalReceipt.html');
-        });
         
         // FOR KEYPAD NAVIGATION
         function handleKeydown(e) {
