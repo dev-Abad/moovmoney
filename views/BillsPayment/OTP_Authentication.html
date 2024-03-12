@@ -34,16 +34,22 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>PROCEED</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-center"><p>PROCEED</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/SendMoney/TowardsMoov/Confirmation.html')"><p>BACK</p></div>
     </div>
     
     <script>
-        // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
+            // Redirect to the specified URL
             window.location.href = url;
         }
 
+        // Add event listener to the "PROCEED" button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to the next page
+            redirectTo('/views/BillsPayment/DigitalReceipt.html');
+        });
+        
         // FOR KEYPAD NAVIGATION
         function handleKeydown(e) {
             switch(e.key) {
@@ -52,6 +58,14 @@
                     break;
                 case 'ArrowRight':
                     nav(1);
+                    break;
+                case 'Enter': // Enter key
+                    // Trigger click event for center button
+                    document.getElementById('softkey-center').click();
+                    break; 
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
         }
@@ -67,6 +81,7 @@
                 targetElement.focus();
             }
         }
+        
 
         // FOR OTP
         function handleInput(input, nextIndex) {

@@ -51,8 +51,9 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col" id="softkey-center" onclick="redirectTo('/views/Dashboard/Dashboard.html')"><p>DOWNLOAD</p></div>
         <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/Dashboard.html')"><p>EXIT</p></div>
+
         </div>
     </div>
     
@@ -62,28 +63,21 @@
             window.location.href = url;
         }
         
+        // KEYPAD NAVIGATION
         function handleKeydown(e) {
-            // Prevent default behavior of arrow keys
-            e.preventDefault();
-
-            switch(e.keyCode) {
-                case 38: // ArrowUp
+            switch(e.key) {
+                case 'ArrowUp':
                     nav(-1);
                     break;
-                case 40: // ArrowDown
+                case 'ArrowDown':
                     nav(1);
                     break;
-                case 39: // ArrowRight
-                    nav(1);
-                    break;
-                case 37: // ArrowLeft
-                    nav(-1);
-                    break;
-                case 13: // Enter key
-                    // Trigger click event for center button
-                    document.getElementById('softkey-center').click();
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
+            
         }
 
         document.addEventListener('keydown', handleKeydown); 
@@ -104,58 +98,5 @@
             redirectTo('/views/Dashboard/Dashboard.html');
         });
     </script>
-        <script>
-            <!--
-    TOAST MESSAGE FOR RECEIPT -->
-         <div id="toast"></div> 
-
-    <!--RECEIPT DOWNLOADING TO PNG FUNCTION-->
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script>
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.style.display = 'block';
-
-            // Hide the toast after 3 seconds
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 3000);
-        }
-
-        function downloadAsPNG() {
-            // Hide the button temporarily
-            const downloadButton = document.querySelector('.buttons');
-            if (downloadButton) {
-                downloadButton.style.display = 'none';
-            }
-
-            // Use html2canvas to capture the webpage content
-            html2canvas(document.body).then(canvas => {
-                // Convert the canvas to PNG data URL
-                const imageData = canvas.toDataURL('image/png');
-
-                // Create a temporary link element to trigger the download
-                const downloadLink = document.createElement('a');
-                downloadLink.href = imageData;
-                downloadLink.download = 'webpage_snapshot.png';
-
-                // Append the link to the document and trigger the click event
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
-
-                // Remove the temporary link element
-                document.body.removeChild(downloadLink);
-
-                // Restore the visibility of the button
-                if (downloadButton) {
-                    downloadButton.style.display = '';
-                }
-
-                // Show the toast message
-                showToast('Receipt downloaded successfully!');
-            });
-        }
-        </script>
 </body>
 </html>

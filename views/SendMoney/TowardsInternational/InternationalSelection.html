@@ -20,8 +20,8 @@
 
     <!--MAIN CONTENT START-->
     <center>
-        <button class="button" tabindex="1" onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalFillup.html')">Intra Moov</button>
-        <button class="button" tabindex="2" onclick="redirectTo('/views/SendMoney/ToOtherNetworks/OtherNetSendMoney.html')"> To Other Networks</button>
+        <button class="button" tabindex="1" onclick="redirectTo('/views/SendMoney/TowardsInternational/ToOtherNetworks.html')">Intra Moov</button>
+        <button class="button" tabindex="2" onclick="redirectTo('/views/SendMoney/TowardsInternational/ToOtherNetworks.html')"> To Other Networks</button>
         <button class="button" tabindex="3" onclick="redirectTo('/views/SendMoney/TowardsInternational/SelectTransaction.html')"> Other Partners</button>
     </center>
 
@@ -29,7 +29,7 @@
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
         <div class="footer-col"><p>SELECT</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/SendMoney.html')"><p>BACK</p></div>
     </div>
 
     <script>
@@ -50,11 +50,10 @@
                 case 'ArrowDown':
                     nav(1);
                     break;
-                case 'ArrowRight':
-                    nav(1);
-                    break;
-                case 'ArrowLeft':
-                    nav(-1);
+                    
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
         }
