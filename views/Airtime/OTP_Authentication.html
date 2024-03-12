@@ -26,7 +26,7 @@
         <input type="text" class="otp-input" id="input3" oninput="handleInput(this, 4)" maxlength="1" tabindex="3">
         <input type="text" class="otp-input" id="input4" oninput="handleInput(this, 5)" maxlength="1" tabindex="4">
         <input type="text" class="otp-input" id="input5" oninput="handleInput(this, 6)" maxlength="1" tabindex="5">
-        <input type="text" class="otp-input" id="input6" oninput="handleInput(this, 7)" maxlength="1" tabindex="6" onclick="redirectTo('/views/Airtime/DigitalReceipt.html')">
+        <input type="text" class="otp-input" id="input6" oninput="handleInput(this, 7)" maxlength="1" tabindex="6">
     </div>
 
     <br><br>
@@ -34,16 +34,23 @@
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>PROCEED</p></div>
-        <div class="footer-col"><p>BACK</p></div>
+        <div class="footer-col" id="softkey-center"><p>PROCEED</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Airitme/DigitalReceipt.html')"><p>BACK</p></div>
     </div>
     
     <script>
-        // FOR URL LINKING TO OTHER PAGE
+        // URL LINKING
         function redirectTo(url) {
+            // Redirect to the specified URL
             window.location.href = url;
         }
 
+        // Add event listener to the "PROCEED" button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to the next page
+            redirectTo('/views/Airtime/DigitalReceipt.html');
+        });
+        
         // FOR KEYPAD NAVIGATION
         function handleKeydown(e) {
             switch(e.key) {
@@ -52,6 +59,14 @@
                     break;
                 case 'ArrowRight':
                     nav(1);
+                    break;
+                case 'Enter': // Enter key
+                    // Trigger click event for center button
+                    document.getElementById('softkey-center').click();
+                    break; 
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
                     break;
             }
         }
@@ -67,6 +82,7 @@
                 targetElement.focus();
             }
         }
+        
 
         // FOR OTP
         function handleInput(input, nextIndex) {

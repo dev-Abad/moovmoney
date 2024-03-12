@@ -6,12 +6,6 @@
     <link rel="stylesheet" href="../../../assets/css/main.css">
     <title>Moov Money</title>
 </head>
-    <style>
-        .inputs:focus {
-            background-color: orange; 
-            color: black; 
-        }
-    </style>
 <body>
     <!--GENERAL CONTENT-->
     <div class="header-div">
@@ -22,12 +16,12 @@
     <input class="inputs" tabIndex="1" type="number" id="accountNo" name="account-num" placeholder="(+223)">
     <input class="inputs" tabIndex="2" type="number" id="amount" name="amount" placeholder="Amount">
 
-    <button id="specify" class="inputs" tabIndex = "3" onclick="document.location='Specification.html'"> Please Specify</button>
+    <button id="specify" class="inputs buttons" tabIndex = "3" onclick="document.location='Specification.html'"> Please Specify</button>
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
-        <div class="footer-col"><p>SELECT</p></div>
+        <div class="footer-col"><p>CONTINUE</p></div>
         <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/SendMoney/TowardsInternational/InternationalSelection.html')"><p>BACK</p></div>
     </div>
 
