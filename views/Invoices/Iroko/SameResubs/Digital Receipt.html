@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <title>Moov Money</title>
+</head>
+<body>
+    <!--GENERAL CONTENT SCREEN-->
+    <div class="header-div">
+        <center><p class="header-title">EXPRESS SEND</p></center>
+    </div>
+
+    <center> 
+        <img src="../../assets/images/moov.svg" class="full-logo"> 
+    </center>
+
+    <!--CONTENT START-->
+    <div class="container">
+        <p id="fullname"> Abdul Jafar</p>
+    </div>
+   
+    <div class="container receipt-content">
+        <!--RECEIPT DETAILS-->
+        <p style="font-weight: bold; margin-top: 2rem; line-height: 0;">Counter No.</p>
+        <p id="counterNo" style="margin-bottom: 2rem;">123456789</p>
+
+        <p style="font-weight: bold; line-height: 0;">Meter No.</p>
+        <p id="meterNo" style="margin-bottom: 2rem;">11223344</p>
+
+        <p style="font-weight: bold; line-height: 0;">Amount</p>
+        <p id="amount" style="margin-bottom: 2rem;">2,030.00</p>
+
+        <p style="font-weight: bold; line-height: 0;">Total Amount</p>
+        <p id="totalAmount" style="margin-bottom: 2rem;">2,030.00</p>
+    
+        <p style="font-weight: bold; line-height: 0;">Reference No.</p>
+        <p id="ref_no" style="margin-bottom: 2rem;">2014 123 456789</p>
+    </div>
+            
+    <!--DATE & TIME-->
+    <div class="row container">
+        <div class="column">
+            <p id="date" style="text-align: left; font-size: 14px;">02/10/2024</p>
+        </div>    
+        <div class="column">
+            <p id="time" style="text-align: right; margin-bottom: 2rem; font-size: 14px;">5:30PM</p>
+        </div>
+    
+    <div style="margin-left: 10px; margin-right: 10px; margin-bottom: 2rem;">
+        <!-- TRANSACTION MESSAGE -->
+        <p style="font-size: 12px; font-weight: bold; text-align:center;">This transaction is protected.</p>
+    </div>
+    
+    
+
+    <!-- <center><button class="buttons" onclick="downloadAsPNG()">DOWNLOAD</button></center> -->
+
+    <!-- TOAST MESSAGE FOR RECEIPT -->
+    <!-- <div id="toast"></div> -->
+
+    <!--RECEIPT DOWNLOADING TO PNG FUNCTION-->
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+
+            // Hide the toast after 3 seconds
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        function downloadAsPNG() {
+            // Hide the button temporarily
+            const downloadButton = document.querySelector('.buttons');
+            if (downloadButton) {
+                downloadButton.style.display = 'none';
+            }
+
+            // Use html2canvas to capture the webpage content
+            html2canvas(document.body).then(canvas => {
+                // Convert the canvas to PNG data URL
+                const imageData = canvas.toDataURL('image/png');
+
+                // Create a temporary link element to trigger the download
+                const downloadLink = document.createElement('a');
+                downloadLink.href = imageData;
+                downloadLink.download = 'webpage_snapshot.png';
+
+                // Append the link to the document and trigger the click event
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+
+                // Remove the temporary link element
+                document.body.removeChild(downloadLink);
+
+                // Restore the visibility of the button
+                if (downloadButton) {
+                    downloadButton.style.display = '';
+                }
+
+                // Show the toast message
+                showToast('Receipt downloaded successfully!');
+            });
+        }
+    </script> -->
+</body>
+</html>

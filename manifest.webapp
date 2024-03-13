@@ -2,7 +2,7 @@
   "name": "MoovMoney",
   "description": "A moov money app",
 
-  "launch_path": "/views/Dashboard/Dashboard.html",
+  "launch_path": "/views/Invoices/TAX ON MOTOR VEHICLE/TaxMessage.html",
   "icons": {
     "16": "/icons/icon16x16.png",
     "48": "/icons/icon48x48.png",
