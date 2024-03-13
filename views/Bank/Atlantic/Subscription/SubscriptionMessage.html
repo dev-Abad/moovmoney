@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moov Money</title>
+    <link rel="stylesheet" href="../../../../assets/css/main.css">
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header-div">
+        <center><p class="title">CONFIRMATION</p></center>
+    </div>
+
+    <center> <img src="../../../../assets/images/moov.svg" class="full-logo"> </center>
+
+    <p class="black-title">SUBSCRIPTION</p>
+
+    <!--MAIN CONTENT START-->
+    <center>
+        <p style="font-size: 14px; color: #252525;">You would like to subscribe to the Moov Money_BABN banking service?</p>
+    </center>
+
+    <center>
+        <button class="orange-btn" style="background-color: #EC6608; border-color: #EC6608; border-radius: 10px; color: white; font-size: 12px; height: 30px;" id="subscribe-btn" tabindex="1" onclick="redirectTo('/views/Bank/Atlantic/Subscription/OTP_Authentication.html')">Subscribe Now</button>
+    </center>
+    
+    <br><br>
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col" id="softkey-center"><p>SELECT</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Bank/Atlantic/AtlanticOptions.html')"><p>BACK</p></div>
+
+        </div>
+    </div>
+    
+    <script>
+        function redirectTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+        
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
+            }
+            
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('#subscribe-btn');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
+</body>
+</html>

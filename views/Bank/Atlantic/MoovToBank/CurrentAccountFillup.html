@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moov Money</title>
+    <link rel="stylesheet" href="../../../../assets/css/main.css">
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header-div">
+        <center><p class="header-title">BANK</p></center>
+    </div>
+
+    <center> <img src="../../../../assets/images/moov.svg" class="full-logo"> </center>
+
+    <p class="black-title">CURRENT ACCOUNT</p>
+
+    <!--MAIN CONTENT START-->
+
+    <!-- USER INPUTS -->
+    <div class="container">
+        <p class="input-label">Full Name</p>
+        <input class="inputs2" type="text" id="fullName" name="full-name" placeholder="Enter your full name" tabIndex="1">
+    </div>
+
+    <div class="container">
+        <p class="input-label">Amount</p>
+        <input class="inputs2" type="text" id="amount" name="amount" placeholder="Enter amount" tabIndex="2" onclick="redirectTo('/views/Bank/Atlantic/MoovToBank/Confirmation.html')">
+    </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col" id="softkey-center"><p>CONTINUE</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0" onclick="redirectTo('/views/Bank/Atlantic/AccountType.html')"><p>BACK</p></div>
+    </div>
+
+    <br><br>
+
+    <script>
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+        
+        // Add event listener to the "PROCEED" button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to the next page
+            redirectTo('/views/Bank/Atlantic/MoovToBank/Confirmation.html');
+        });
+        
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                    
+                case 'Enter': // Enter key
+                   // Trigger click event for center button
+                   document.getElementById('softkey-center').click();
+                   break;
+                    
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
+            }
+            
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.inputs2');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
+</body>
+</html>
