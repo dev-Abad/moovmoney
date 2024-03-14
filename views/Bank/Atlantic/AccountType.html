@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moov Money</title>
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header">
+        <center><p class="title">BANK</p></center>
+    </div>
+
+    <!--MAIN CONTENT START-->
+    <center>
+        <button class="button" tabindex="1" onclick="redirectTo('/views/Bank/Atlantic/MoovToBank/CurrentAccountFillup.html')">Current Account</button>
+        <button class="button" tabindex="2" onclick="redirectTo('/views/Bank/Atlantic/MoovToBank/SavingsAccountFillup.html')">Savings Account</button>
+    </center>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+    <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+    <div class="footer-col" id="softkey-center"><p>SELECT</p></div>
+    <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Bank/BankOptions.html')"><p>BACK</p></div>
+    </div>
+
+    <script>
+        
+        // FOR URL LINKING TO OTHER PAGE
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+        
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                    
+                case 'Enter': // Enter key
+                // Trigger click event for center button
+                document.getElementById('softkey-center').click();
+                break;
+                    
+                case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
+            }
+            
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.button');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
+</body>
+</html>
