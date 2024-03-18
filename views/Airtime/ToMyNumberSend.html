@@ -19,18 +19,16 @@
     <!--MAIN CONTENT START-->
     <!-- USER DETAILS -->
     <center>
-        <p class="fullname" style="margin-top: 1rem; font-weight: bold; font-size: 20px; line-height: 0;">Abdul Jafar</p>
-        <p class="contact" style="margin-top: 1rem; margin-bottom: 2rem; font-size: 14px; line-height: 0;">09123457894</p>
+        <p class="fullname" style="font-weight: bold; font-size: 16px; line-height: 0;">Abdul Jafar</p>
+        <p class="contact" style="margin-bottom: 2rem; font-size: 14px; line-height: 0;">09123457894</p>
     </center>
-
+    
     <!-- USER INPUTS -->
-    <div class="container">
-        <p class="input-label">Amount</p>
-        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter amount" onclick="redirectTo('/views/Airtime/Confirmation.html')" tabindex="1">
+    <div class="container row">
+        <p class="input-label3">Amount</p>
+        <input class="inputs3" type="number" id="amount" name="amount" placeholder="Enter amount" onclick="redirectTo('/views/Airtime/Confirmation.html')" tabindex="1">
     </div>
-
-    <br><br>
-
+    
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
@@ -38,10 +36,7 @@
         <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Airtime/PurchaseCreditOptions.html')"><p>BACK</p></div>
     </div>
 
-    <br><br>
-
     <script>
-        
         // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
             window.location.href = url;
@@ -79,7 +74,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.inputs2');
+            const items = document.querySelectorAll('.inputs3');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];
@@ -87,8 +82,6 @@
                 targetElement.focus();
             }
         }
-
-        
     </script>
 </body>
 </html>
