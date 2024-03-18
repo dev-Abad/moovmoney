@@ -55,6 +55,50 @@
         <div class="footer-col" id="softkey-center" ><p>SEND</p></div>
         <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/SendMoney/TowardsInternational/Specification.html')"><p>BACK</p></div>
     </div>
+
+    <script src= "assets/js/backend.js"></script>
+    <script>
+        buttons: {
+            YES: {
+                action: function(){
+                    var phoneNumber = $("#phoneNumber").val();
+                    var amount = $("#amount").val();
+                    var pin = $("#pin").val();
+                    var reason = $("#reason").val();
+                    $.confirm({
+                        content: '<span>Phone Number: ' + phoneNumber + '</span><br> <span> Amount: ' + amount + '</span><br> ',
+                        buttons: {
+                            Confirm: {
+                                action: function (){
+                                    console.log("confirm");
+                                    // Making AJAX request to the backend server
+                                    $.ajax({
+                                        url: 'http://localhost:1234/getMsisdnDetails', // Endpoint to fetch data from
+                                        type: 'POST',
+                                        contentType: 'application/json',
+                                        data: JSON.stringify({ phoneNumber: phoneNumber }), // Sending phone number to the backend
+                                        success: function(response) {
+                                            console.log(response);
+                                            // Update HTML content with received data
+                                            $('#accountName').text(response.accountName);
+                                            $('#accountNo').text(response.accountNo);
+                                            $('#balance').text(response.balance);
+                                            $('#transactionFee').text(response.transactionFee);
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.error('Error:', error);
+                                            // Handle error if needed
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+    
     <script>
         function redirectTo(url) {
             // Redirect to the specified URL
