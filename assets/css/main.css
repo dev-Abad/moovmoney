@@ -114,7 +114,7 @@ body{
 
 .moov-logo{
     width: 80px;
-    height: 40px;
+    height: 50px;
 }
 
 .full-logo{
@@ -478,9 +478,9 @@ body{
 }
 
 .moov-logo{
-    margin-right: 7px;
-    width: 65px;
-    height: 35px;
+    align-items: center;
+    width: 70px;
+    height: 60px;
 }
 
 .full-logo{
@@ -894,7 +894,7 @@ body{
 .full-logo1{
     width: 65px;
     height: 65px;
-    margin-top: 7px;
+    margin-top: 2px;
     padding: 0%;
 }
 
