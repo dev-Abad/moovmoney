@@ -14,20 +14,18 @@
 
     <center> <img src="../../assets/images/moov.svg" class="full-logo"> </center>
 
-    <p class="black-title">Recharge a subscriber</p>
+    <p class="black-title">Recharge Subscriber</p>
 
     <!--MAIN CONTENT START-->
     <!-- USER INPUTS -->
     <div class="container">
-        <p class="input-label">Mobile Number</p>
-        <input class="inputs2" type="number" id="mobileNum" name="mobile-num" placeholder="Enter mobile number" tabindex="1">
+        <p class="input-label3">Mobile Number</p>
+        <input class="inputs3" type="number" id="mobileNum" name="mobile-num" placeholder="Enter mobile number" tabindex="1">
     </div>
     <div class="container">
-        <p class="input-label">Amount</p>
-        <input class="inputs2" type="number" id="amount" name="amount" placeholder="Enter amount" tabindex="2" onclick="redirectTo('/views/Airtime/Confirmation.html')"> 
+        <p class="input-label3">Amount</p>
+        <input class="inputs3" type="number" id="amount" name="amount" placeholder="Enter amount" tabindex="2" onclick="redirectTo('/views/Airtime/Confirmation.html')"> 
     </div>
-
-    <br><br>
 
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
@@ -35,8 +33,6 @@
         <div class="footer-col" id="softkey-center"><p>CONTINUE</p></div>
         <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Airtime/PurchaseCreditOptions.html')"><p>BACK</p></div>
     </div>
-
-    <br><br>
 
     <script>
         
@@ -77,7 +73,7 @@
         document.addEventListener('keydown', handleKeydown); 
 
         function nav(move) {
-            const items = document.querySelectorAll('.inputs2');
+            const items = document.querySelectorAll('.inputs3');
             const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
             const targetIndex = currentIndex + move;
             const targetElement = items[targetIndex];

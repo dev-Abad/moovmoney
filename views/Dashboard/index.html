@@ -54,7 +54,13 @@
         </div>
     </div>
 
-    
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col" id="softkey-center"><p>SELECT</p></div>
+        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+    </div>
+
     <script>
         // FOR URL LINKING TO OTHER PAGE
         function redirectTo(url) {
@@ -76,6 +82,10 @@
                 case 'ArrowLeft':
                     nav(-1);
                     break;
+                case 'Enter': // Enter key
+                   // Trigger click event for center button
+                   document.getElementById('softkey-center').click();
+                   break;
             }
         }
 
