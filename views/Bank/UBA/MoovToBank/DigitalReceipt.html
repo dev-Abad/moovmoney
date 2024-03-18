@@ -3,22 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../../assets/css/main.css">
     <title>Moov Money</title>
-    <link rel="stylesheet" href="../../../../../assets/css/main.css">
 </head>
 <body>
-    <!--GENERAL CONTENT-->
+    <!--GENERAL CONTENT SCREEN-->
     <div class="header-div">
-        <center><p class="title">NOTICE!</p></center>
+        <center><p class="header-title">DIGITAL RECEIPT</p></center>
     </div>
 
-        <center> <img src="../../../../../assets/images/moov.svg" class="full-logo" style="margin-top: 1rem;"> </center>
+    <center> <img src="../../../../../../assets/images/moov.svg" class="full-logo"> </center>
 
-     <!--MAIN CONTENT START-->
-        <center>
-            <p style="font-size: 18px; color: #252525; line-height: 2rem;">THIRD PARTY USSD<br> HERE!</p>
-        </center>
+    <!--CONTENT START-->
+    <p class="black-title">Moov Money Transfer <br>to Bank Account</p>
 
+    <div class="container receipt-content">
+        <!--ACCOUNT NO.-->
+        <p style="font-weight: bold; margin-top: 2rem; line-height: 0;">Account No.</p>
+        <p id="accNum" style="margin-bottom: 2rem;">2,000.00</p>
+
+        <!--AMOUNT-->
+        <p style="font-weight: bold; margin-top: 2rem; line-height: 0;">Amount</p>
+        <p id="amount" style="margin-bottom: 2rem;">2,030.00</p>
+
+        <!--TOTAL AMOUNT-->
+        <p style="font-weight: bold; line-height: 0;">Total Amount</p>
+        <p id="total_amount" style="margin-bottom: 2rem;">2,030.00</p>
+    
+        <!--REFERENCE NUMBEER-->
+        <p style="font-weight: bold; line-height: 0;">Reference No.</p>
+        <p id="ref_no" style="margin-bottom: 2rem;">2014 123 456789</p>
+    </div>
+            
+    <!--DATE & TIME-->
+    <div class="row container">
+        <div class="column">
+            <p id="date" style="text-align: left; font-size: 14px;">02/10/2024</p>
+        </div>    
+        <div class="column">
+            <p id="time" style="text-align: right; margin-bottom: 2rem; font-size: 14px;">5:30PM</p>
+        </div>
+    
+    <div style="margin-left: 10px; margin-right: 10px; margin-bottom: 2rem;">
+        <!-- TRANSACTION MESSAGE -->
+        <p style="font-size: 12px; font-weight: bold; text-align:center;">This transaction is protected.</p>
+    </div>
+    
     <!-- Fixed footer -->
     <div class="footer" style="font-size: 12px;">
         <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../../assets/css/main.css">
+    <title>Moov Money</title>
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header-div">
+        <center><p class="header-title">CONFIRMATION</p></center>
+    </div>
+
+    <center> <img src="../../../../../../assets/images/moov.svg" class="full-logo"> </center>
+
+    <p class="black-title1" style="line-height: 20px; margin-bottom: 2.5rem;">Moov Money Transfer <br>to Bank Account</p>
+
+    <!--CONFIRMATION DETAILS-->
+    
+    <p style="text-align: center; font-weight: bold; font-size: 20px; line-height: 0%;" id="accountName"> Abdul Jafar</p>
+
+    <br>
+
+    <div class="row">
+        <div class="column">
+            <p class="display-title" id="accNum">Account No.</p>
+        </div>
+        <div class="column">
+            <p class="display-label">12345</p>
+        </div>
+    </div>
+
+    <p class="details">You’re about to send</p>
+
+    <div class="row">
+        <div class="column">
+            <p class="display-title" id="amount">Amount</p>
+        </div>
+        <div class="column">
+            <p class="display-label">2,000.00</p>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 2rem;">
+        <div class="column">
+            <p class="transaction-fee">Transaction_Fee</p>
+        </div>
+        <div class="column">
+            <p class="transaction-fee" style="text-align: right;">30.00</p>
+        </div>
+    </div>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col" id="softkey-center" ><p>SEND</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Bank/UBA/MoovToBank/MoovFillUp.html')"><p>BACK</p></div>
+    </div>
+
+    <script>
+        function redirectTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+        
+        // Add event listener for the center button
+        document.getElementById('softkey-center').addEventListener('click', function() {
+            // Redirect to Digital Receipt page
+            redirectTo('/views/Bank/UBA/MoovToBank/MPIN.html');
+        });
+
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                    
+                case 'Enter': // Enter key
+                   // Trigger click event for center button
+                   document.getElementById('softkey-center').click();
+                   break;
+                    
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
+            }
+            
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.footer-col');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+    </script>
+</body>
+</html>

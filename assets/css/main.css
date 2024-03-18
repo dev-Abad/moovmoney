@@ -114,7 +114,7 @@ body{
 
 .moov-logo{
     width: 80px;
-    height: 40px;
+    height: 50px;
 }
 
 .full-logo{
@@ -478,9 +478,9 @@ body{
 }
 
 .moov-logo{
-    margin-right: 7px;
-    width: 65px;
-    height: 35px;
+    align-items: center;
+    width: 70px;
+    height: 60px;
 }
 
 .full-logo{
@@ -880,3 +880,77 @@ body{
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='100px' height='100px' style='shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg%3E%3Cpath style='opacity:0.985' fill='%23059689' d='M 41.5,7.5 C 67.1658,5.68763 83.6658,17.021 91,41.5C 93.5182,65.3134 83.6849,81.4801 61.5,90C 33.9965,94.8401 16.1632,84.0068 8,57.5C 5.86728,31.8175 17.0339,15.1508 41.5,7.5 Z'/%3E%3C/g%3E%3Cg%3E%3Cpath style='opacity:1' fill='%23fafcfc' d='M 72.5,43.5 C 56.6754,44.4964 40.6754,44.8297 24.5,44.5C 24.5,42.1667 24.5,39.8333 24.5,37.5C 34.8333,37.5 45.1667,37.5 55.5,37.5C 55.1796,34.1016 55.513,30.7683 56.5,27.5C 62.1877,32.521 67.521,37.8543 72.5,43.5 Z'/%3E%3C/g%3E%3Cg%3E%3Cpath style='opacity:1' fill='%23cbe9e6' d='M 72.5,43.5 C 73.0431,43.56 73.3764,43.8933 73.5,44.5C 57.0049,45.8268 40.6715,45.8268 24.5,44.5C 40.6754,44.8297 56.6754,44.4964 72.5,43.5 Z'/%3E%3C/g%3E%3Cg%3E%3Cpath style='opacity:1' fill='%23cbe9e6' d='M 74.5,54.5 C 58.3246,54.1703 42.3246,54.5036 26.5,55.5C 25.9569,55.44 25.6236,55.1067 25.5,54.5C 41.9951,53.1732 58.3285,53.1732 74.5,54.5 Z'/%3E%3C/g%3E%3Cg%3E%3Cpath style='opacity:1' fill='%23f9fcfc' d='M 74.5,54.5 C 74.5,56.8333 74.5,59.1667 74.5,61.5C 64.1667,61.5 53.8333,61.5 43.5,61.5C 43.8204,64.8984 43.487,68.2317 42.5,71.5C 36.8123,66.479 31.479,61.1457 26.5,55.5C 42.3246,54.5036 58.3246,54.1703 74.5,54.5 Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/*ETISALAT POSTPAID INPUT*/
+.black-title1{
+    padding: 0;
+    font-size: 15px;
+    text-align: center;
+    color: #252525;
+    font-weight: bold;
+    line-height: 0;
+    margin-bottom: 1.6rem;
+}
+/*ETISALAT LOGO*/
+.full-logo1{
+    width: 65px;
+    height: 65px;
+    margin-top: 2px;
+    padding: 0%;
+}
+
+/*ETISALAT INPUT LABEL*/
+.input-label3{
+    margin-bottom: 0.2rem;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #252525;
+}
+/*ETISALAT INPUT*/
+.inputs3{
+    margin-left: 0.5rem;
+    margin-bottom:15px;
+    width: calc(100% - 1rem); 
+    height: 35px;
+    max-width: 100%;
+    border-radius: 7px;
+    padding-left: 5px;
+    border-color: #cccccc;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+
+/*ETISALAT INPUT LABEL*/
+.input-label4{
+    margin-bottom: 0.5rem;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #252525;
+    
+}
+/*mWater INPUT*/
+.inputs4{
+    margin-left: 0.5rem;
+    margin-bottom:20px;
+    width: calc(100% - 1rem); 
+    height: 35px;
+    max-width: 100%;
+    border-radius: 7px;
+    padding-left: 5px;
+    border-color: #cccccc;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.inputs5{
+    margin-left: 0.5rem;
+    margin-bottom:30px;
+    width: calc(100% - 1rem); 
+    height: 35px;
+    max-width: 100%;
+    border-radius: 7px;
+    padding-left: 5px;
+    border-color: #cccccc;
+    font-size: 12px;
+    box-sizing: border-box;
+}
