@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moov Money</title>
+    <link rel="stylesheet" href="../../../../../assets/css/main.css">
+</head>
+<body>
+    <!--GENERAL CONTENT-->
+    <div class="header-div">
+        <center><p class="title">NOTICE!</p></center>
+    </div>
+
+        <center> <img src="../../../../../assets/images/moov.svg" class="full-logo" style="margin-top: 1rem;"> </center>
+
+     <!--MAIN CONTENT START-->
+        <center>
+            <p style="font-size: 18px; color: #252525; line-height: 2rem;">THIS SERVICE WILL BE <br>AVAILABLE SOON!</p>
+        </center>
+
+    <!-- Fixed footer -->
+    <div class="footer" style="font-size: 12px;">
+        <div class="footer-col"><p> &nbsp;&nbsp;&nbsp; </p></div>
+        <div class="footer-col"><p>&nbsp;&nbsp;&nbsp;</p></div>
+        <div class="footer-col" id="softkey-right" tabindex="0"  onclick="redirectTo('/views/Dashboard/Dashboard.html')"><p>EXIT</p></div>
+
+        </div>
+    </div>
+    
+    <script>
+        function redirectTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+        
+        // KEYPAD NAVIGATION
+        function handleKeydown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    nav(-1);
+                    break;
+                case 'ArrowDown':
+                    nav(1);
+                    break;
+                 case 'SoftRight':
+                    // Trigger click event for softkey-right button
+                    document.getElementById('softkey-right').click();
+                    break;
+            }
+            
+        }
+
+        document.addEventListener('keydown', handleKeydown); 
+
+        function nav(move) {
+            const items = document.querySelectorAll('.footer-col');
+            const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+            const targetIndex = currentIndex + move;
+            const targetElement = items[targetIndex];
+            if (targetElement) {
+                targetElement.focus();
+            }
+        }
+
+        // Add event listener for the center button
+        document.getElementById('softkey-right').addEventListener('click', function() {
+            // Redirect to Digital Receipt page
+            redirectTo('/views/Dashboard/Dashboard.html');
+        });
+    </script>
+</body>
+</html>
